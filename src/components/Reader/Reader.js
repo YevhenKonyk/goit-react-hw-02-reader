@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Styles from './Reader.module.css';
 
 export default class Reader extends Component {
-  static defaultProps = {};
-
-  static propTypes = {};
+  static propTypes = {
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+      }),
+    ),
+  };
 
   state = {
     publicationIndex: 0,
