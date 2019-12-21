@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Styles from './Reader.module.css';
+import Controlls from './Controlls';
+import Progress from './Progress';
+import Publication from './Publication';
+import styles from './Reader.module.css';
 
 export default class Reader extends Component {
   static propTypes = {
@@ -31,40 +34,27 @@ export default class Reader extends Component {
 
   render() {
     const { items } = this.props;
+    const itemsLength = items.length;
     const { publicationIndex } = this.state;
     const { title, text } = items[this.state.publicationIndex];
 
     return (
       // Разметка компонента <Reader>
-      <div className={Styles.reader}>
-        {/* Разметка компонента <Controls> */}
-        <section>
-          <button
-            type="button"
-            onClick={this.handlePrevBtn}
-            disabled={publicationIndex <= 0}
-          >
-            Назад
-          </button>
-          <button
-            type="button"
-            onClick={this.handleNextBtn}
-            disabled={publicationIndex >= items.length - 1}
-          >
-            Вперед
-          </button>
-        </section>
-
+      <div className={styles.reader}>
+        {/* Разметка компонента <Controls>  */}
+        <Controlls
+          onPrevBtn={this.handlePrevBtn}
+          onNextBtn={this.handleNextBtn}
+          itemsLength={itemsLength}
+          publicationIndex={publicationIndex}
+        />
         {/* Разметка компонента <Progress> */}
-        <p>
-          {publicationIndex + 1}/{items.length}
-        </p>
-
+        <Progress
+          itemsLength={itemsLength}
+          publicationIndex={publicationIndex}
+        />
         {/* Разметка компонента <Publication> */}
-        <article>
-          <h2>{title}</h2>
-          <p>{text}</p>
-        </article>
+        <Publication title={title} text={text} />
       </div>
     );
   }

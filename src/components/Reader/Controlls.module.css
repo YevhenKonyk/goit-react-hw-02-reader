@@ -1,0 +1,13 @@
+.controlls {
+}
+
+.btn {
+}
+
+.prev {
+  composes: btn;
+}
+
+.next {
+  composes: btn;
+}
