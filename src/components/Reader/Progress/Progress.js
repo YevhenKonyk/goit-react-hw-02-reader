@@ -11,11 +11,11 @@ export default class Progress extends Component {
   render() {
     const { publicationIndex, itemsLength } = this.props;
     return (
-      <>
-        <p className={styles.progress}>
+      <div className={styles.progress}>
+        <p className={styles.text}>
           {publicationIndex + 1}/{itemsLength}
         </p>
-      </>
+      </div>
     );
   }
 }

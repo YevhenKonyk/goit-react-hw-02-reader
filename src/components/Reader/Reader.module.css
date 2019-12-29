@@ -1,4 +1,7 @@
 .reader {
   width: 960px;
   margin: 0 auto;
+  padding: 10px;
+  border: 2px solid rgba(0, 0, 255, 0.2);
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 255, 0.2);
 }

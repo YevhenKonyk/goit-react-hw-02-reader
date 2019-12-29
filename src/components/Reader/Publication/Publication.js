@@ -12,8 +12,8 @@ export default class Publication extends Component {
     const { title, text } = this.props;
     return (
       <article className={styles.publication}>
-        <h2 className={styles.publication__title}>{title}</h2>
-        <p className={styles.publication__text}>{text}</p>
+        <h2 className={styles.title}>{title}</h2>
+        <p className={styles.text}>{text}</p>
       </article>
     );
   }

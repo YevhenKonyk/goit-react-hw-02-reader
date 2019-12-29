@@ -1,0 +1,34 @@
+.controlls {
+  width: 210px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 100px;
+  height: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  background-color: rgb(52, 152, 219);
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, 0.2);
+}
+
+.btn:disabled {
+  color: rgb(209, 209, 209);
+  background-color: rgb(128, 128, 128);
+}
+
+.btn:active {
+  background-color: rgb(41, 128, 185);
+}
+
+.prev {
+  composes: btn;
+}
+
+.next {
+  composes: btn;
+}
