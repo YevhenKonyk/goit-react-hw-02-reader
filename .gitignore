@@ -105,3 +105,6 @@ dist
 
 # Webpack
 package-lock.json
+
+# build directory
+build/
